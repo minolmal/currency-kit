@@ -1,0 +1,60 @@
+{
+	"name": "currency-kit",
+	"version": "0.0.0",
+	"description": "TypeScript utilities for precise money arithmetic, currency formatting, and currency configuration.",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"sideEffects": false,
+	"types": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js"
+		},
+		"./money": {
+			"types": "./src/core/money.ts",
+			"import": "./dist/core/money.js"
+		},
+		"./currency": {
+			"types": "./src/core/currency.ts",
+			"import": "./dist/core/currency.js"
+		},
+		"./configs": {
+			"types": "./src/configs/index.ts",
+			"import": "./dist/configs/index.js"
+		},
+		"./constants/money": {
+			"types": "./src/constants/money.ts",
+			"import": "./dist/constants/money.js"
+		},
+		"./constants/symbols": {
+			"types": "./src/constants/symbols.ts",
+			"import": "./dist/constants/symbols.js"
+		},
+		"./errors": {
+			"types": "./src/errors/index.ts",
+			"import": "./dist/errors/index.js"
+		},
+		"./utils": {
+			"types": "./src/utils/index.ts",
+			"import": "./dist/utils/index.js"
+		}
+	},
+	"scripts": {
+		"build": "bun build ./src/index.ts ./src/core/money.ts ./src/core/currency.ts ./src/configs/index.ts ./src/constants/money.ts ./src/constants/symbols.ts ./src/errors/index.ts ./src/utils/index.ts --outdir ./dist --root ./src --target browser --format esm",
+		"test": "bun test",
+		"typecheck": "bun check",
+		"format": "biome format --write .",
+		"lint": "biome lint ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.6.6",
+		"@types/bun": "latest",
+		"typescript": "^7.0.2"
+	},
+	"dependencies": {
+		"decimal.js": "^10.6.0"
+	}
+}
