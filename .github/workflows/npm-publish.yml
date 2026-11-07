@@ -42,8 +42,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add package.json README.md dist
           git commit -m "Build package from ${GITHUB_SHA}"
-          git push --force "https://github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/package-dist
+          auth_header="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c http.extraheader="AUTHORIZATION: basic $auth_header" \
+            push --force "https://github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/package-dist
         env:
-          GIT_CONFIG_COUNT: 1
-          GIT_CONFIG_KEY_0: http.https://github.com/.extraheader
-          GIT_CONFIG_VALUE_0: "AUTHORIZATION: bearer ${{ github.token }}"
+          GH_TOKEN: ${{ github.token }}
