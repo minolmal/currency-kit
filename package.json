@@ -1,0 +1,51 @@
+{
+  "name": "currency-kit",
+  "version": "0.0.0",
+  "description": "TypeScript utilities for precise money arithmetic, currency formatting, and currency configuration.",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./money": {
+      "types": "./dist/core/money.d.ts",
+      "import": "./dist/core/money.js"
+    },
+    "./currency": {
+      "types": "./dist/core/currency.d.ts",
+      "import": "./dist/core/currency.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js"
+    },
+    "./constants/money": {
+      "types": "./dist/constants/money.d.ts",
+      "import": "./dist/constants/money.js"
+    },
+    "./constants/symbols": {
+      "types": "./dist/constants/symbols.d.ts",
+      "import": "./dist/constants/symbols.js"
+    },
+    "./errors": {
+      "types": "./dist/errors/index.d.ts",
+      "import": "./dist/errors/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "import": "./dist/utils/index.js"
+    }
+  },
+  "dependencies": {
+    "decimal.js": "^10.6.0"
+  }
+}
