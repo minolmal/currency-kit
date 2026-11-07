@@ -3,9 +3,10 @@
 TypeScript utilities for precise monetary arithmetic, currency formatting, and
 currency configuration.
 
-This project is maintained as a GitHub repository and is **not published to the
-npm registry**. It uses [`decimal.js`](https://github.com/MikeMcl/decimal.js)
-for decimal arithmetic and Bun for development and validation.
+This project is published and maintained at
+https://github.com/minolmal/currency-kit.git. It is **not published to the npm
+registry**. It uses [`decimal.js`](https://github.com/MikeMcl/decimal.js) for
+decimal arithmetic and Bun for development and validation.
 
 ## Table of contents
 
@@ -29,29 +30,28 @@ for decimal arithmetic and Bun for development and validation.
 ## Project status
 
 Use this repository directly: clone it for development or install it from
-GitHub. Do not use `npm install currency-kit` or expect an npm registry release.
-The package is configured as private to prevent accidental publication.
+GitHub. This package is published on GitHub, not on the npm registry, and is
+configured as private to prevent accidental npm publication.
 
 ## Installation
 
-Install directly from GitHub with pnpm, replacing `<owner>/<repository>` with
-the repository's GitHub path:
+Install directly from GitHub with pnpm:
 
 ```bash
-pnpm add github:<owner>/<repository>
+pnpm add github:minolmal/currency-kit
 ```
 
 To install a specific branch, tag, or commit:
 
 ```bash
-pnpm add github:<owner>/<repository>#<branch-or-tag>
+pnpm add github:minolmal/currency-kit#main
 ```
 
 You can also clone the repository to develop it locally:
 
 ```bash
-git clone https://github.com/<owner>/<repository>.git
-cd <repository>
+git clone https://github.com/minolmal/currency-kit.git
+cd currency-kit
 pnpm install
 ```
 
