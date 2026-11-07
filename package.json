@@ -6,44 +6,45 @@
 	"type": "module",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
+	"files": ["dist"],
 	"sideEffects": false,
-	"types": "./src/index.ts",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./src/index.ts",
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js"
 		},
 		"./money": {
-			"types": "./src/core/money.ts",
+			"types": "./dist/core/money.d.ts",
 			"import": "./dist/core/money.js"
 		},
 		"./currency": {
-			"types": "./src/core/currency.ts",
+			"types": "./dist/core/currency.d.ts",
 			"import": "./dist/core/currency.js"
 		},
 		"./configs": {
-			"types": "./src/configs/index.ts",
+			"types": "./dist/configs/index.d.ts",
 			"import": "./dist/configs/index.js"
 		},
 		"./constants/money": {
-			"types": "./src/constants/money.ts",
+			"types": "./dist/constants/money.d.ts",
 			"import": "./dist/constants/money.js"
 		},
 		"./constants/symbols": {
-			"types": "./src/constants/symbols.ts",
+			"types": "./dist/constants/symbols.d.ts",
 			"import": "./dist/constants/symbols.js"
 		},
 		"./errors": {
-			"types": "./src/errors/index.ts",
+			"types": "./dist/errors/index.d.ts",
 			"import": "./dist/errors/index.js"
 		},
 		"./utils": {
-			"types": "./src/utils/index.ts",
+			"types": "./dist/utils/index.d.ts",
 			"import": "./dist/utils/index.js"
 		}
 	},
 	"scripts": {
-		"build": "bun build ./src/index.ts ./src/core/money.ts ./src/core/currency.ts ./src/configs/index.ts ./src/constants/money.ts ./src/constants/symbols.ts ./src/errors/index.ts ./src/utils/index.ts --outdir ./dist --root ./src --target browser --format esm",
+		"build": "bun build ./src/index.ts ./src/core/money.ts ./src/core/currency.ts ./src/configs/index.ts ./src/constants/money.ts ./src/constants/symbols.ts ./src/errors/index.ts ./src/utils/index.ts --outdir ./dist --root ./src --target browser --format esm && tsc --ignoreConfig --emitDeclarationOnly --declaration --declarationDir ./dist --rootDir ./src --noEmit false --allowImportingTsExtensions false --module ESNext --moduleResolution bundler --target ESNext --types bun --skipLibCheck ./src/index.ts",
 		"test": "bun test",
 		"typecheck": "bun check",
 		"format": "biome format --write .",

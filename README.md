@@ -35,28 +35,24 @@ configured as private to prevent accidental npm publication.
 
 ## Installation
 
-Install directly from GitHub with pnpm:
+Install the prebuilt package from the GitHub distribution branch with Bun:
 
 ```bash
-pnpm add github:minolmal/currency-kit
+bun add github:minolmal/currency-kit#package-dist
 ```
 
-To install a specific branch, tag, or commit:
-
-```bash
-pnpm add github:minolmal/currency-kit#main
-```
-
-You can also clone the repository to develop it locally:
+The `package-dist` branch is generated from the build and contains only the
+package manifest, this README, and `dist/`. To develop the library itself,
+clone the main branch instead:
 
 ```bash
 git clone https://github.com/minolmal/currency-kit.git
 cd currency-kit
-pnpm install
+bun install
 ```
 
-The GitHub install uses the package name `currency-kit`. Its ESM build and
-export map support local workspace consumers and direct module imports.
+The installed package is named `currency-kit`. Its ESM build and export map
+support package imports and the documented subpaths.
 
 ## Getting started
 
