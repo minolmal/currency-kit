@@ -1,9 +1,9 @@
 # dependencies (bun install)
 node_modules
+.github
 
 # output
 out
-dist
 *.tgz
 
 # code coverage
